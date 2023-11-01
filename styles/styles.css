@@ -1,0 +1,91 @@
+/**
+ * FILEPATH: /C:/Users/atenc/Documents/Projects/NotesFront/styles/styles.css
+ * 
+ * CSS styles for a toggle switch.
+ * 
+ * The switch consists of a slider and a toggle input.
+ * The slider is a rectangular box with a circular knob that slides from left to right.
+ * The toggle input is hidden and is used to toggle the switch on and off.
+ * 
+ * The switch has the following custom properties:
+ * --input-focus: color of the slider when the toggle is checked
+ * --font-color: color of the text
+ * --font-color-sub: color of the subtext
+ * --bg-color: background color of the slider when the toggle is unchecked
+ * --bg-color-alt: background color of the slider when the toggle is checked
+ * --main-color: color of the slider border and shadow
+ * 
+ * The switch has the following classes:
+ * .switch: container for the switch
+ * .toggle: hidden input toggle
+ * .slider: rectangular box that slides from left to right
+ * .slider:before: circular knob that slides from left to right
+ */
+.switch {
+    --input-focus: #2d8cf0;
+    --font-color: #323232;
+    --font-color-sub: #666;
+    --bg-color: #fff;
+    --bg-color-alt: #666;
+    --main-color: #323232;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 50px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-colorcolor);
+    transition: 0.3s;
+  }
+  
+  .slider:before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    left: -2px;
+    bottom: 2px;
+    background-color: var(--bg-color);
+    box-shadow: 0 3px 0 var(--main-color);
+    transition: 0.3s;
+  }
+  
+  .toggle:checked + .slider {
+    background-color: var(--input-focus);
+  }
+  
+  .toggle:checked + .slider:before {
+    transform: translateX(30px);
+  }
+  .switch-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
